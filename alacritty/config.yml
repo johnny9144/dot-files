@@ -233,7 +233,7 @@ bell:
 #   - ScrollLineDown
 #   - ScrollToTop
 #   - ScrollToBottom
-#   - ClearHistory
+# - ClearHistory
 #   - Hide
 #   - Quit
 #   - ClearLogNotice
@@ -257,72 +257,107 @@ bell:
 #   - ~AppKeypad
 #   - AppKeypad
 #
+
+# Alacritty + Tmux key integration
+#   `\x1c` is `C-\` as tmux prefix
+#   `\x1b` is `Esc`
+#   `\x02` is `C-b`
 key_bindings:
-  - { key: V, mods: Command, action: Paste }
-  - { key: C, mods: Command, action: Copy }
-  - { key: Q, mods: Command, action: Quit }
-  - { key: N, mods: Command, action: SpawnNewInstance }
-  - { key: Return, mods: Command, action: ToggleFullscreen }
+  #   # ----- change font size ----
+  #   - { key: Key0, mods: Command, action: ResetFontSize }
+  #   - { key: Equals, mods: Command, action: IncreaseFontSize }
+  #   - { key: Minus, mods: Command, action: DecreaseFontSize }
+  #
+  # ----- new pane/tab/window -----
+  - { key: D, mods: Command, chars: "\x02\"" } # new vertical pane with default shell
+  - { key: D, mods: Command|Shift, chars: "\x02%" } # new vertical pane with commands menu
+  # - { key: Return, mods: Command, chars: "\x02%" } # new horizontal pane with default shell
+  # - { key: Return, mods: Command|Shift, chars: "\x02|" } # new horizontal pane with commands menu
+  # - { key: T, mods: Command|Shift, chars: "\x02C" } # new tab with commands menu
+  # - { key: T, mods: Command, chars: "\x02c" } # new tab with default shell
+  # - { key: N, mods: Command, chars: "\x02S" } # switch session in current window with local sessions menu
+  - { key: N, mods: Command|Shift, command: {
+          program: "/usr/local/bin/alacritty",
+          # args:
+          #   [
+          #     "msg",
+          #     "create-window",
+          #     "-e",
+          #     "/usr/local/bin/fish",
+          #     "--login",
+          #     "--command",
+          #     "tmux-sessions --all",
+          #   ],
+        } }
+  #
+  #
+  # open session in new window with all sessions menu across servers
+  #
+  #   # ----- popup window -----
+  #   - { key: P, mods: Command, chars: "\x1cP" } # close the pane
+  #
+  # ----- close pane/tab/window -----
+  - { key: W, mods: Command, chars: "\x1cx" } # close the pane
+  - { key: W, mods: Command|Shift, chars: "\x1c&" } # close the tab
+  - { key: Q, mods: Command, chars: "\x1cd" } # close the window
 
-  - { key: Home, chars: "\x1bOH", mode: AppCursor }
-  - { key: Home, chars: "\x1b[H", mode: ~AppCursor }
-  - { key: End, chars: "\x1bOF", mode: AppCursor }
-  - { key: End, chars: "\x1b[F", mode: ~AppCursor }
-  - { key: Equals, mods: Command, action: IncreaseFontSize }
-  - { key: Minus, mods: Command, action: DecreaseFontSize }
-  - { key: Minus, mods: Command|Shift, action: ResetFontSize }
-  - { key: PageUp, mods: Shift, chars: "\x1b[5;2~" }
-  - { key: PageUp, mods: Control, chars: "\x1b[5;5~" }
-  - { key: PageUp, chars: "\x1b[5~" }
-  - { key: PageDown, mods: Shift, chars: "\x1b[6;2~" }
-  - { key: PageDown, mods: Control, chars: "\x1b[6;5~" }
-  - { key: PageDown, chars: "\x1b[6~" }
-  - { key: Left, mods: Shift, chars: "\x1b[1;2D" }
-  - { key: Left, mods: Control, chars: "\x1b[1;5D" }
-  - { key: Left, mods: Alt, chars: "\x1b[1;3D" }
-  - { key: Left, chars: "\x1b[D", mode: ~AppCursor }
-  - { key: Left, chars: "\x1bOD", mode: AppCursor }
-  - { key: Right, mods: Shift, chars: "\x1b[1;2C" }
-  - { key: Right, mods: Control, chars: "\x1b[1;5C" }
-  - { key: Right, mods: Alt, chars: "\x1b[1;3C" }
-  - { key: Right, chars: "\x1b[C", mode: ~AppCursor }
-  - { key: Right, chars: "\x1bOC", mode: AppCursor }
-  - { key: Up, mods: Shift, chars: "\x1b[1;2A" }
-  - { key: Up, mods: Control, chars: "\x1b[1;5A" }
-  - { key: Up, mods: Alt, chars: "\x1b[1;3A" }
-  - { key: Up, chars: "\x1b[A", mode: ~AppCursor }
-  - { key: Up, chars: "\x1bOA", mode: AppCursor }
-  - { key: Down, mods: Shift, chars: "\x1b[1;2B" }
-  - { key: Down, mods: Control, chars: "\x1b[1;5B" }
-  - { key: Down, mods: Alt, chars: "\x1b[1;3B" }
-  - { key: Down, chars: "\x1b[B", mode: ~AppCursor }
-  - { key: Down, chars: "\x1bOB", mode: AppCursor }
-  - { key: Tab, mods: Shift, chars: "\x1b[Z" }
-  - { key: F1, chars: "\x1bOP" }
-  - { key: F2, chars: "\x1bOQ" }
-  - { key: F3, chars: "\x1bOR" }
-  - { key: F4, chars: "\x1bOS" }
-  - { key: F5, chars: "\x1b[15~" }
-  - { key: F6, chars: "\x1b[17~" }
-  - { key: F7, chars: "\x1b[18~" }
-  - { key: F8, chars: "\x1b[19~" }
-  - { key: F9, chars: "\x1b[20~" }
-  - { key: F10, chars: "\x1b[21~" }
-  - { key: F11, chars: "\x1b[23~" }
-  - { key: F12, chars: "\x1b[24~" }
-  - { key: Back, chars: "\x7f" }
-  - { key: Back, mods: Alt, chars: "\x1b\x7f" }
-  - { key: Insert, chars: "\x1b[2~" }
-  - { key: Delete, chars: "\x1b[3~" }
-
-    # shortcuts for tmux. the leader key is control-b (0x02)
-  - { key: W, mods: Command, chars: "\x02&" } # close tab (kill)
-  - { key: T, mods: Command, chars: "\x02c" } # new tab
-  - { key: RBracket, mods: Command|Shift, chars: "\x02n" } # select next tab
-  - { key: LBracket, mods: Command|Shift, chars: "\x02p" } # select previous tab
-  - { key: RBracket, mods: Command, chars: "\x02o" } # select next pane
-  - { key: LBracket, mods: Command, chars: "\x02;" } # select last (previously used) pane
-  - { key: F, mods: Command, chars: "\x02/" } # search (upwards) (see tmux.conf)
+  #   # ----- copy mode -----
+  #   - { key: F, mods: Command, chars: "\x1c[/" } # enter vi copy mode, and search from up to down
+  #   - { key: F, mods: Command|Shift, chars: "\x1c[?" } # enter vi copy mode, search from down to up
+  #
+  #   # ----- misc shortcuts -----
+  #   - { key: I, mods: Command, chars: "\x1c:" } # input tmux command
+  #   - { key: I, mods: Command|Shift, chars: "\x1cI" } # synchronize panes in the current window
+  #   - { key: R, mods: Command, chars: "\x1cR" } # run command with commands menu
+  #   - { key: Z, mods: Command, chars: "\x1cz" } # zoom toggle of the current pane.
+  #   - { key: Z, mods: Command|Shift, chars: "\x1c " } # retile panes in the current window with preset layouts
+  #   - { key: Comma, mods: Command, chars: "\x1c," } # rename tab
+  #   - { key: S, mods: Command, chars: "\x1b:w\x0a" } # Type <escape>:w<enter> to save vim
+  #
+  #  ----- navigate panes -----
+  - { key: H, mods: Command, chars: "\x1ch" } # go to the pane left
+  - { key: J, mods: Command, chars: "\x1cj" } # go to the pane above
+  - { key: K, mods: Command, chars: "\x1ck" } # go to the pane below
+  - { key: L, mods: Command, chars: "\x1cl" } # go to the pane right
+#   - { key: Left, mods: Command, chars: "\x1ch" }
+#   - { key: Down, mods: Command, chars: "\x1cj" }
+#   - { key: Up, mods: Command, chars: "\x1ck" }
+#   - { key: Right, mods: Command, chars: "\x1cl" }
+#
+#   # ----- resize panes -----
+#   - { key: H, mods: Command|Shift, chars: "\x1cH" } # resize the current pane left
+#   - { key: J, mods: Command|Shift, chars: "\x1cJ" } # resize the current pane above
+#   - { key: K, mods: Command|Shift, chars: "\x1cK" } # resize the current pane below
+#   - { key: L, mods: Command|Shift, chars: "\x1cL" } # resize the current pane right
+#   - { key: Left, mods: Command|Shift, chars: "\x1cH" }
+#   - { key: Down, mods: Command|Shift, chars: "\x1cJ" }
+#   - { key: Up, mods: Command|Shift, chars: "\x1cK" }
+#   - { key: Right, mods: Command|Shift, chars: "\x1cL" }
+#
+#   # ----- navigate tabs -----
+#   - { key: B, mods: Command, chars: "\x1c^" } # back to last tab
+#   - { key: LBracket, mods: Command, chars: "\x1cp" } # go to previous tab
+#   - { key: RBracket, mods: Command, chars: "\x1cn" } # go to next tab
+#   - { key: Key1, mods: Command, chars: "\x1c1" } # go to tab 1..9
+#   - { key: Key2, mods: Command, chars: "\x1c2" }
+#   - { key: Key3, mods: Command, chars: "\x1c3" }
+#   - { key: Key4, mods: Command, chars: "\x1c4" }
+#   - { key: Key5, mods: Command, chars: "\x1c5" }
+#   - { key: Key6, mods: Command, chars: "\x1c6" }
+#   - { key: Key7, mods: Command, chars: "\x1c7" }
+#   - { key: Key8, mods: Command, chars: "\x1c8" }
+#   - { key: Key9, mods: Command, chars: "\x1c9" }
+#
+#   # ----- move panes -----
+#   - { key: Key1, mods: Command|Shift, chars: "\x1c\x1b1" } # move the current pane to tab 1..9
+#   - { key: Key2, mods: Command|Shift, chars: "\x1c\x1b2" }
+#   - { key: Key3, mods: Command|Shift, chars: "\x1c\x1b3" }
+#   - { key: Key4, mods: Command|Shift, chars: "\x1c\x1b4" }
+#   - { key: Key5, mods: Command|Shift, chars: "\x1c\x1b5" }
+#   - { key: Key6, mods: Command|Shift, chars: "\x1c\x1b6" }
+#   - { key: Key7, mods: Command|Shift, chars: "\x1c\x1b7" }
+#   - { key: Key8, mods: Command|Shift, chars: "\x1c\x1b8" }
+#   - { key: Key9, mods: Command|Shift, chars: "\x1c\x1b9" }
 
 mouse:
   # Click settings
@@ -421,8 +456,12 @@ debug:
 #
 # You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
 # Entries in shell.args are passed unmodified as arguments to the shell.
-shell:
-# program: /bin/zsh
+# env:
+#   TERM: xterm-256color
+#
+# shell:
+#   program: /usr/local/bin/fish
 #   args:
-#     - --command=tmux
-# vim: nospell
+#     - --login
+#     - --command
+#     - "tmux new-session -A -D -s main"

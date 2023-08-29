@@ -76,6 +76,8 @@ plugins=(
   brew
   docker-compose
   zsh-autosuggestions
+  fzf
+  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -120,3 +122,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# autoload -U compinit; compinit
+# zstyle ':completion:*' menu select

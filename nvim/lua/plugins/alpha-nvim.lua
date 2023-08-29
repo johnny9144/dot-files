@@ -24,5 +24,17 @@ return {
     ]]
 
     dashboard.section.header.val = vim.split(logo, "\n")
+
+    local buttonRestoreSessionList = dashboard.button("S", " " .. " Session List", [[:Telescope persisted <CR>]])
+    local buttonRestoreLastSession = dashboard.button("s", " " .. " Restore Last Session", [[:SessionLoadLast <CR>]])
+
+    buttonRestoreSessionList.opts.hl = "AlphaButtons"
+    buttonRestoreSessionList.opts.hl_shortcut = "AlphaShortcut"
+    buttonRestoreLastSession.opts.hl = "AlphaButtons"
+    buttonRestoreLastSession.opts.hl_shortcut = "AlphaShortcut"
+
+    table.remove(dashboard.section.buttons.val, 7)
+    table.insert(dashboard.section.buttons.val, 7, buttonRestoreLastSession)
+    table.insert(dashboard.section.buttons.val, 8, buttonRestoreSessionList)
   end,
 }
