@@ -259,6 +259,8 @@ bell:
 #
 
 # Alacritty + Tmux key integration
+# you can get the combination ASCII hex code via `xxd -psd` command
+# remember to dedut return and C-c
 #   `\x1c` is `C-\` as tmux prefix
 #   `\x1b` is `Esc`
 #   `\x02` is `C-b`
@@ -276,19 +278,19 @@ key_bindings:
   # - { key: T, mods: Command|Shift, chars: "\x02C" } # new tab with commands menu
   # - { key: T, mods: Command, chars: "\x02c" } # new tab with default shell
   # - { key: N, mods: Command, chars: "\x02S" } # switch session in current window with local sessions menu
-  - { key: N, mods: Command|Shift, command: {
-          program: "/usr/local/bin/alacritty",
-          # args:
-          #   [
-          #     "msg",
-          #     "create-window",
-          #     "-e",
-          #     "/usr/local/bin/fish",
-          #     "--login",
-          #     "--command",
-          #     "tmux-sessions --all",
-          #   ],
-        } }
+  # - { key: N, mods: Command|Shift, command: {
+  #         program: "/usr/local/bin/alacritty",
+  #         # args:
+  #         #   [
+  #         #     "msg",
+  #         #     "create-window",
+  #         #     "-e",
+  #         #     "/usr/local/bin/fish",
+  #         #     "--login",
+  #         #     "--command",
+  #         #     "tmux-sessions --all",
+  #         #   ],
+  #       } }
   #
   #
   # open session in new window with all sessions menu across servers
@@ -298,8 +300,8 @@ key_bindings:
   #
   # ----- close pane/tab/window -----
   - { key: W, mods: Command, chars: "\x1cx" } # close the pane
-  - { key: W, mods: Command|Shift, chars: "\x1c&" } # close the tab
-  - { key: Q, mods: Command, chars: "\x1cd" } # close the window
+  # - { key: W, mods: Command|Shift, chars: "\x1c&" } # close the tab
+  # - { key: Q, mods: Command, chars: "\x1cd" } # close the window
 
   #   # ----- copy mode -----
   #   - { key: F, mods: Command, chars: "\x1c[/" } # enter vi copy mode, and search from up to down
@@ -315,14 +317,14 @@ key_bindings:
   #   - { key: S, mods: Command, chars: "\x1b:w\x0a" } # Type <escape>:w<enter> to save vim
   #
   #  ----- navigate panes -----
-  - { key: H, mods: Command, chars: "\x1ch" } # go to the pane left
-  - { key: J, mods: Command, chars: "\x1cj" } # go to the pane above
-  - { key: K, mods: Command, chars: "\x1ck" } # go to the pane below
-  - { key: L, mods: Command, chars: "\x1cl" } # go to the pane right
-#   - { key: Left, mods: Command, chars: "\x1ch" }
-#   - { key: Down, mods: Command, chars: "\x1cj" }
-#   - { key: Up, mods: Command, chars: "\x1ck" }
-#   - { key: Right, mods: Command, chars: "\x1cl" }
+  # - { key: H, mods: Command, chars: "\x1ch" } # go to the pane left
+  # - { key: J, mods: Command, chars: "\x1cj" } # go to the pane above
+  # - { key: K, mods: Command, chars: "\x1ck" } # go to the pane below
+  # - { key: L, mods: Command, chars: "\x1cl" } # go to the pane right
+  - { key: Left, mods: Command, chars: "\x1ch" }
+  - { key: Down, mods: Command, chars: "\x1cj" }
+  - { key: Up, mods: Command, chars: "\x1ck" }
+  - { key: Right, mods: Command, chars: "\x1cl" }
 #
 #   # ----- resize panes -----
 #   - { key: H, mods: Command|Shift, chars: "\x1cH" } # resize the current pane left
