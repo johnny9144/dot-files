@@ -396,9 +396,6 @@ debug:
   # Record all characters and escape sequences as test data.
   ref_test: false
 
-env:
-  TERM: alacritty
-
 # Shell
 #
 # You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
