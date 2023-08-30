@@ -78,6 +78,7 @@ plugins=(
   zsh-autosuggestions
   fzf
   z
+  yarn
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -123,5 +124,17 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# for z to auto complete cd path
 # autoload -U compinit; compinit
 # zstyle ':completion:*' menu select
+
+# option + C to cd
+bindkey "ç" fzf-cd-widget
+
+# Setting ag as the default source for fzf
+export FZF_DEFAULT_COMMAND='ag -l --path-to-ignore ~/.ignore --nocolor --hidden -g ""'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
