@@ -24,7 +24,7 @@ return {
     follow_cwd = true,
     -- table of dirs that the plugin will auto-save and auto-load from
     allowed_dirs = {
-      "~/Workspaces",
+      "~/workspaces",
       "~/.files",
     },
     -- table of dirs that are ignored when auto-saving and auto-loading
