@@ -1,5 +1,7 @@
 schemes:
-  myFont: &myFont # Font family
+  myFont:
+    # Font family
+    &myFont
     family: JetBrainsMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
@@ -32,25 +34,7 @@ font:
   glyph_offset:
     x: 0
     y: 0
-
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina you
-  # probably want this set to false.
-  #
-  # macOS >= 10.14.x:
-  #
-  # If the font quality on non-retina display looks bad then set
-  # `use_thin_strokes` to `true` and enable font smoothing by running the
-  # following command:
-  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
-  #   `defaults write -g AppleFontSmoothing -int 0`
-  #
-  # This is a global setting and will require a log out or restart to take
-  # effect.
-  # use_thin_strokes: true
-
-# Tokyo Night theme
+  # Tokyo Night theme
 colors:
   primary:
     background: "#24283b"
@@ -86,14 +70,6 @@ window:
   dimensions:
     columns: 0
     lines: 0
-
-  # Window padding (changes require restart)
-  #
-  # Blank space added around the window in pixels. This padding is not scaled by
-  # DPI and the specified value is always added at both opposing sides.
-  # padding:
-  #   x: 0
-  #   y: 0
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -266,37 +242,14 @@ key_bindings:
   - { key: D, mods: Command, chars: "\x02\"" } # new vertical pane with default shell
   - { key: D, mods: Command|Shift, chars: "\x02%" } # new vertical pane with commands menu
   - { key: T, mods: Command, chars: "\x02c" } # new tab with default shell
-  # not work so far
+  # keep it to drop the command but not work so far
   - { key: N, mods: Command, chars: "\x02S" } # switch session in current window with local sessions menu
-  # - { key: N, mods: Command|Shift, command: {
-  #         program: "/usr/local/bin/alacritty",
-  #         # args:
-  #         #   [
-  #         #     "msg",
-  #         #     "create-window",
-  #         #     "-e",
-  #         #     "/usr/local/bin/fish",
-  #         #     "--login",
-  #         #     "--command",
-  #         #     "tmux-sessions --all",
-  #         #   ],
-  #       } }
-  #
-  #
-  # open session in new window with all sessions menu across servers
-  #
-  #   # ----- popup window -----
-  #   - { key: P, mods: Command, chars: "\x02P" } # close the pane
-  #
+
   # ----- close pane/tab/window -----
   - { key: W, mods: Command, chars: "\x02x" } # close the pane
   # - { key: W, mods: Command|Shift, chars: "\x02&" } # close the tab
   # - { key: Q, mods: Command, chars: "\x02d" } # close the window
   - { key: W, mods: Command|Shift, chars: "\x02d" } # close the window
-
-  #   # ----- copy mode -----
-  #   - { key: F, mods: Command, chars: "\x02[/" } # enter vi copy mode, and search from up to down
-  #   - { key: F, mods: Command|Shift, chars: "\x02[?" } # enter vi copy mode, search from down to up
 
   # ----- navigate panes -----
   - { key: Left, mods: Command, chars: "\x02h" }
@@ -400,16 +353,10 @@ debug:
 #
 # You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
 # Entries in shell.args are passed unmodified as arguments to the shell.
-#
-# shell:
-#   program: /usr/local/bin/fish
-#   args:
-#     - --login
-#     - --command
-#     - "tmux new-session -A -D -s main"
 shell:
   program: /bin/zsh
   args:
-    - -l
-    - -c
+    - --login
+    - --command
+    # always attach the last session
     - "tmux attach || tmux"

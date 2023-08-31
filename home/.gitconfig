@@ -1,0 +1,24 @@
+[alias]
+  br = branch
+  ck = checkout
+  st = status
+  pr = pull --rebase
+  em = commit --allow-empty -m
+  gr = log --graph
+[core]
+	editor = nvim
+  ignorecase = false
+[push]
+	default = current
+[init]
+	defaultBranch = master
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  grep = auto
+  ui = auto
+[user]
+  name = "Johnny Huang"
+  email = "johnny"
