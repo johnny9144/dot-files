@@ -18,7 +18,7 @@ font:
 
   bold_italic: *myFont
   # Point size of the font
-  size: 14.0
+  size: 16.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -84,16 +84,16 @@ window:
   # Specified in number of columns/lines, not pixels. If both are zero this
   # setting is ignored.
   dimensions:
-    columns: 100
-    lines: 85
+    columns: 0
+    lines: 0
 
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is not scaled by
   # DPI and the specified value is always added at both opposing sides.
-  padding:
-    x: 0
-    y: 0
+  # padding:
+  #   x: 0
+  #   y: 0
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -370,7 +370,7 @@ cursor:
   # window is not focused.
   unfocused_hollow: true
 
-# dynamic_title: false
+dynamic_title: false
 
 debug:
   # Should display the render timer
