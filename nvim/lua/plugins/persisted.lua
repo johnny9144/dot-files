@@ -21,12 +21,9 @@ return {
       vim.notify("No existing session to load.")
     end,
     -- change session file name to match current working directory if it changes
-    follow_cwd = true,
+    follow_cwd = false,
     -- table of dirs that the plugin will auto-save and auto-load from
-    allowed_dirs = {
-      "~/workspaces",
-      "~/.files",
-    },
+    allowed_dirs = nil,
     -- table of dirs that are ignored when auto-saving and auto-loading
     ignored_dirs = nil,
     -- options for the telescope extension

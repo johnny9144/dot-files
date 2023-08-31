@@ -1,6 +1,11 @@
 return {
   "neovim/nvim-lspconfig",
   opts = {
+    inlay_hints = {
+      enabled = true,
+    },
+    -- enable to debug
+    format_notify = false,
     servers = {
       eslint = {
         settings = {

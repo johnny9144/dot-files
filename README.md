@@ -2,6 +2,8 @@
 
 ## System
 
+brew install stow
+
 ## Terminal
 
 ### alacritty
