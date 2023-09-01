@@ -356,7 +356,7 @@ debug:
 shell:
   program: /bin/zsh
   args:
-    - --login
-    - --command
+    - -l
+    - -c
     # always attach the last session
     - "tmux attach || tmux"
