@@ -2,7 +2,9 @@
 
 ## System
 
+download Alacritty
 brew install stow
+brew install tmux
 
 ## Terminal
 
