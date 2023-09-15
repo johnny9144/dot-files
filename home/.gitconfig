@@ -22,3 +22,5 @@
 [user]
   name = "Johnny Huang"
   email = "johnny"
+[pull]
+	rebase = true
