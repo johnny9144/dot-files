@@ -8,6 +8,18 @@ return {
     format_notify = false,
     servers = {
       eslint = {
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "javascript.jsx",
+          "typescript",
+          "typescriptreact",
+          "typescript.tsx",
+          "vue",
+          "svelte",
+          "astro",
+          "graphql",
+        },
         settings = {
           -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
           workingDirectory = { mode = "auto" },
@@ -31,8 +43,8 @@ return {
       ---@type lspconfig.options.tsserver
       tsserver = {
         keys = {
-          { "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", desc = "Organize Imports" },
-          { "<leader>cR", "<cmd>TypescriptRenameFile<CR>", desc = "Rename File" },
+          -- { "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", desc = "Organize Imports" },
+          -- { "<leader>cR", "<cmd>TypescriptRenameFile<CR>", desc = "Rename File" },
         },
         settings = {
           typescript = {
@@ -90,6 +102,7 @@ return {
       terraformls = {},
       dockerls = {},
       docker_compose_language_service = {},
+      graphql = {},
     },
     setup = {
       eslint = function()

@@ -4,7 +4,7 @@ return {
     if type(opts.ensure_installed) == "table" then
       vim.list_extend(
         opts.ensure_installed,
-        { "json", "json5", "jsonc", "typescript", "yaml", "terraform", "dockerfile" }
+        { "json", "markdown", "typescript", "yaml", "terraform", "dockerfile", "graphql", "bash" }
       )
     end
   end,
