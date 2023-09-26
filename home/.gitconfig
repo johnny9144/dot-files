@@ -2,14 +2,15 @@
   br = branch
   ck = checkout
   st = status
-  pr = pull --rebase
-  em = commit --allow-empty -m
   gr = log --graph
 [core]
 	editor = nvim
   ignorecase = false
 [push]
 	default = current
+[pull]
+	default = current
+	rebase = true
 [init]
 	defaultBranch = master
 [color]
@@ -22,5 +23,3 @@
 [user]
   name = "Johnny Huang"
   email = "johnny"
-[pull]
-	rebase = true
