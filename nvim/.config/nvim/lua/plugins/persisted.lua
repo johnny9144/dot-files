@@ -7,7 +7,7 @@ return {
     -- ~/.local/share/nvim
     save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"),
     -- silent nvim message when sourcing session file
-    silent = false,
+    silent = true,
     -- create session files based on the branch of the git enabled repository
     use_git_branch = false,
     -- automatically save session files when exiting Neovim
@@ -23,7 +23,9 @@ return {
     -- change session file name to match current working directory if it changes
     follow_cwd = true,
     -- table of dirs that the plugin will auto-save and auto-load from
-    allowed_dirs = nil,
+    allowed_dirs = {
+      "~/workspaces/viewsonic",
+    },
     -- table of dirs that are ignored when auto-saving and auto-loading
     ignored_dirs = nil,
     -- options for the telescope extension

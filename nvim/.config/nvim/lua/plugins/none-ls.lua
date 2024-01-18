@@ -1,7 +1,7 @@
--- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
+-- https://github.com/nvimtools/none-ls.nvim
 
 return {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   opts = function(_, opts)
     local nls = require("null-ls")
 
@@ -9,9 +9,9 @@ return {
       nls.builtins.formatting.terraform_fmt,
       nls.builtins.diagnostics.terraform_validate,
       nls.builtins.diagnostics.hadolint,
-      -- there is a bug formatting yaml with prettierd currently
-      nls.builtins.formatting.prettierd.with({
-        disabled_filetypes = { "yaml" },
+      -- there is a bug formatting yaml with prettier currently
+      nls.builtins.formatting.prettier.with({
+        disabled_filetypes = { "yaml", "yml" },
       }),
     })
   end,

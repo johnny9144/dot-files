@@ -41,31 +41,13 @@ return {
         },
       },
       ---@type lspconfig.options.tsserver
-      tsserver = {
-        keys = {
-          -- { "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", desc = "Organize Imports" },
-          -- { "<leader>cR", "<cmd>TypescriptRenameFile<CR>", desc = "Rename File" },
-        },
-        settings = {
-          typescript = {
-            format = {
-              indentSize = vim.o.shiftwidth,
-              convertTabsToSpaces = vim.o.expandtab,
-              tabSize = vim.o.tabstop,
-            },
-          },
-          javascript = {
-            format = {
-              indentSize = vim.o.shiftwidth,
-              convertTabsToSpaces = vim.o.expandtab,
-              tabSize = vim.o.tabstop,
-            },
-          },
-          completions = {
-            completeFunctionCalls = true,
-          },
-        },
-      },
+      -- tsserver = {
+      --   settings = {
+      --     completions = {
+      --       completeFunctionCalls = true,
+      --     },
+      --   },
+      -- },
       yamlls = {
         -- Have to add this for yamlls to understand that we support line folding
         capabilities = {
@@ -86,7 +68,7 @@ return {
           yaml = {
             keyOrdering = false,
             format = {
-              enable = true,
+              enable = false,
             },
             validate = true,
             schemaStore = {
@@ -99,14 +81,14 @@ return {
           },
         },
       },
-      terraformls = {},
-      dockerls = {},
-      docker_compose_language_service = {},
+      -- terraformls = {},
+      -- dockerls = {},
+      -- docker_compose_language_service = {},
       graphql = {},
     },
     setup = {
       eslint = function()
-        require("lazyvim.util").on_attach(function(client)
+        require("lazyvim.util").lsp.on_attach(function(client)
           if client.name == "eslint" then
             client.server_capabilities.documentFormattingProvider = true
           elseif client.name == "tsserver" then
@@ -117,7 +99,7 @@ return {
         -- linting
         vim.api.nvim_create_autocmd("BufWritePre", {
           callback = function(event)
-            if not require("lazyvim.plugins.lsp.format").enabled() then
+            if not require("lazyvim.util").format.enabled() then
               -- exit early if autoformat is not enabled
               return
             end
@@ -132,11 +114,11 @@ return {
           end,
         })
       end,
-
-      tsserver = function(_, opts)
-        require("typescript").setup({ server = opts })
-        return true
-      end,
+      --
+      --   tsserver = function(_, opts)
+      --     require("typescript").setup({ server = opts })
+      --     return true
+      --   end,
     },
   },
 }

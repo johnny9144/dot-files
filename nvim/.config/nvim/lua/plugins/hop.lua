@@ -1,8 +1,8 @@
 return {
   "johnny9144/hop.nvim",
   keys = {
-    { ",w", "<cmd>HopWordAC<cr>", desc = "HopWord down" },
-    { ",b", "<cmd>HopWordBC<cr>", desc = "HopWord up" },
+    { "<leader><leader>w", "<cmd>HopWordAC<cr>", desc = "HopWord down" },
+    { "<leader><leader>b", "<cmd>HopWordBC<cr>", desc = "HopWord up" },
   },
   config = function()
     require("hop").setup({
