@@ -4,23 +4,25 @@ local plugins = {
     opts = {
       ensure_installed = {
         "eslint-lsp",
-        "prettier",
-        "typescript-language-server"
-      }
-    }
+        "eslint_d",
+        "prettierd",
+        "stylua",
+        "typescript-language-server",
+      },
+    },
   },
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require("plugins.configs.lspconfig")
+      require("custom.configs.lspconfig")
     end,
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
     event = "VeryLazy",
     opts = function()
-      return require "custom.configs.null-ls"
+      return require("custom.configs.null-ls")
     end,
   },
   {
@@ -30,7 +32,7 @@ local plugins = {
       { "<leader><leader>b", "<cmd>HopWordBC<cr>", desc = "HopWord up" },
     },
     config = function()
-      require "custom.configs.hop"
+      require("custom.configs.hop")
     end,
   },
   {
@@ -77,30 +79,38 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = function()
-      return require "custom.configs.nvim-tree"
+      return require("custom.configs.nvim-tree")
     end,
   },
   {
     "folke/persistence.nvim",
-    event = "BufReadPre",                                           -- this will only start session saving when an actual file was opened
+    event = "BufReadPre",                                        -- this will only start session saving when an actual file was opened
     opts = {
       dir = vim.fn.expand(vim.fn.stdpath("state") .. "/sessions/"), -- directory where session files are saved
-      options = { "buffers", "curdir", "tabpages", "winsize" },     -- sessionoptions used for saving
-      pre_save = nil,                                               -- a function to call before saving the session
-      save_empty = false,                                           -- don't save if there are no open file buffers
+      options = { "buffers", "curdir", "tabpages", "winsize" },  -- sessionoptions used for saving
+      pre_save = nil,                                            -- a function to call before saving the session
+      save_empty = false,                                        -- don't save if there are no open file buffers
     },
     keys = {
-      { "<leader>qs", "<cmd>lua require(\"persistence\").load()<cr>",                desc = "Restore the session for the current directory" },
-      { "<leader>ql", "<cmd>lua require(\"persistence\").load({ last = true })<cr>", desc = "Restore the last session" },
+      {
+        "<leader>qs",
+        '<cmd>lua require("persistence").load()<cr>',
+        desc = "Restore the session for the current directory",
+      },
+      {
+        "<leader>ql",
+        '<cmd>lua require("persistence").load({ last = true })<cr>',
+        desc = "Restore the last session",
+      },
     },
   },
   {
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
+    "nvimdev/dashboard-nvim",
+    event = "VimEnter",
     config = function()
-      require "custom.configs.dashboard"
+      require("custom.configs.dashboard")
     end,
-    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
-  }
+    dependencies = { { "nvim-tree/nvim-web-devicons" } },
+  },
 }
-return plugins;
+return plugins
