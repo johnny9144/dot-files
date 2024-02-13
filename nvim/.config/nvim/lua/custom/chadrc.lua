@@ -23,6 +23,7 @@ M.ui = {
     },
     -- end
   },
+  telescope = { style = "bordered" }, -- borderless / bordered
 }
 
 M.plugins = "custom.plugins"
