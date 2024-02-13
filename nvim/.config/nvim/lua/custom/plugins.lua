@@ -9,6 +9,7 @@ local plugins = {
         "stylua",
         "typescript-language-server",
         "lua-language-server",
+        "graphql-language-service-cli",
       },
     },
   },
@@ -127,6 +128,29 @@ local plugins = {
         test = { "#FF00FF" },
       },
     },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function()
+      return require("custom.configs.nvim-treesitter")
+    end,
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return require("custom.configs.noice")
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = function()
+      return require("custom.configs.gitsigns")
+    end,
   },
 }
 return plugins
