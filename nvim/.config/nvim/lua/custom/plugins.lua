@@ -8,6 +8,7 @@ local plugins = {
         "prettierd",
         "stylua",
         "typescript-language-server",
+        "lua-language-server",
       },
     },
   },
