@@ -24,6 +24,7 @@ M.ui = {
     -- end
   },
   telescope = { style = "bordered" }, -- borderless / bordered
+  extended_integrations = { "trouble" },
 }
 
 M.plugins = "custom.plugins"

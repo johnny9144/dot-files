@@ -29,10 +29,6 @@ local plugins = {
   },
   {
     "johnny9144/hop.nvim",
-    keys = {
-      { "<leader><leader>w", "<cmd>HopWordAC<cr>", desc = "HopWord down" },
-      { "<leader><leader>b", "<cmd>HopWordBC<cr>", desc = "HopWord up" },
-    },
     config = function()
       require("custom.configs.hop")
     end,
@@ -93,18 +89,6 @@ local plugins = {
       pre_save = nil,                                            -- a function to call before saving the session
       save_empty = false,                                        -- don't save if there are no open file buffers
     },
-    keys = {
-      {
-        "<leader>qs",
-        '<cmd>lua require("persistence").load()<cr>',
-        desc = "Restore the session for the current directory",
-      },
-      {
-        "<leader>ql",
-        '<cmd>lua require("persistence").load({ last = true })<cr>',
-        desc = "Restore the last session",
-      },
-    },
   },
   {
     "nvimdev/dashboard-nvim",
@@ -151,6 +135,15 @@ local plugins = {
     opts = function()
       return require("custom.configs.gitsigns")
     end,
+  },
+  {
+    "folke/trouble.nvim",
+    event = "VeryLazy",
+    cmd = "Trouble",
+    config = function()
+      require("custom.configs.trouble")
+    end,
+    dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
 }
 return plugins
