@@ -77,18 +77,27 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = function()
-      return require("custom.configs.nvim-tree")
+      local nt = require("custom.configs.nvim-tree")
+
+      return nt.opts
     end,
+    config = function(_, opts)
+      local nt = require("custom.configs.nvim-tree")
+
+      return nt.config(opts)
+    end,
+    dependencies = {
+      "JMarkin/nvim-tree.lua-float-preview",
+      lazy = true,
+    },
   },
   {
     "folke/persistence.nvim",
-    event = "BufReadPre",                                        -- this will only start session saving when an actual file was opened
-    opts = {
-      dir = vim.fn.expand(vim.fn.stdpath("state") .. "/sessions/"), -- directory where session files are saved
-      options = { "buffers", "curdir", "tabpages", "winsize" },  -- sessionoptions used for saving
-      pre_save = nil,                                            -- a function to call before saving the session
-      save_empty = false,                                        -- don't save if there are no open file buffers
-    },
+    -- this will only start session saving when an actual file was opened
+    event = "BufReadPre",
+    opts = function()
+      return require("custom.configs.persistence")
+    end,
   },
   {
     "nvimdev/dashboard-nvim",
