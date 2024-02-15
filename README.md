@@ -1,18 +1,17 @@
 # Installations
 
-## System
+## App
 
-download Alacritty
-brew install stow
-brew install tmux
+`brew install stow tmux neovim lolcat`
+`brew install --cask alacritty`
 
-## Terminal
+### NeoVim
 
-### alacritty
+`git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim`
 
-## Shell
+remove custom folder
 
-### Zsh
+`stow \.`
 
 ### Plugins
 
@@ -20,7 +19,3 @@ brew install tmux
 # zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
-
-## Editors
-
-### NeoVim
