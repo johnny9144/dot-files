@@ -29,6 +29,10 @@ local plugins = {
   },
   {
     "johnny9144/hop.nvim",
+    cmd = {
+      "HopWordAC",
+      "HopWordBC",
+    },
     config = function()
       require("custom.configs.hop")
     end,
@@ -153,6 +157,16 @@ local plugins = {
       require("custom.configs.trouble")
     end,
     dependencies = { { "nvim-tree/nvim-web-devicons" } },
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
   },
 }
 return plugins
