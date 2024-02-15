@@ -164,9 +164,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# tmuxifier
+export TMUXIFIER="$HOME/.config/tmux/plugins/tmuxifier"
+export PATH="$TMUXIFIER/bin:$PATH"
+export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmux/layouts"
+export EDITOR="nvim"
+eval "$(tmuxifier init -)"
