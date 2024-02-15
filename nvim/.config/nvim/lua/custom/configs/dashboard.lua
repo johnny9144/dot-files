@@ -1,11 +1,17 @@
-local dashboard = require("dashboard")
-local home = os.getenv("HOME")
+local dashboard = require "dashboard"
+local home = os.getenv "HOME"
 
 local doom = {
   theme = "doom",
   config = {
     header = {},
     center = {
+      {
+        action = 'lua require("telescope").extensions.projects.projects({})',
+        desc = " Load Project",
+        icon = " ",
+        key = "p",
+      },
       { action = "Telescope find_files cwd=", desc = " Find file", icon = " ", key = "f" },
       { action = "Telescope oldfiles", desc = " Recent files", icon = " ", key = "r" },
       { action = "Telescope live_grep", desc = " Find text", icon = " ", key = "g" },

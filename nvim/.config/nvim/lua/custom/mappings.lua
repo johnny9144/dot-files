@@ -19,6 +19,7 @@ M.general = {
     ["<c-k>"] = { "<cmd>TmuxNavigateUp<cr>" },
     ["<c-l>"] = { "<cmd>TmuxNavigateRight<cr>" },
     ["<c-\\>"] = { "<cmd>TmuxNavigatePrevious<cr>" },
+    ["<leader>fp"] = { "<Cmd>Telescope projects<CR>", desc = "Projects" },
   },
 }
 

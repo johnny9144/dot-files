@@ -16,15 +16,15 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require("plugins.configs.lspconfig")
-      require("custom.configs.lspconfig")
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
     end,
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
     event = "VeryLazy",
     opts = function()
-      return require("custom.configs.null-ls")
+      return require "custom.configs.null-ls"
     end,
   },
   {
@@ -34,7 +34,7 @@ local plugins = {
       "HopWordBC",
     },
     config = function()
-      require("custom.configs.hop")
+      require "custom.configs.hop"
     end,
   },
   {
@@ -81,12 +81,12 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = function()
-      local nt = require("custom.configs.nvim-tree")
+      local nt = require "custom.configs.nvim-tree"
 
       return nt.opts
     end,
     config = function(_, opts)
-      local nt = require("custom.configs.nvim-tree")
+      local nt = require "custom.configs.nvim-tree"
 
       return nt.config(opts)
     end,
@@ -100,14 +100,14 @@ local plugins = {
     -- this will only start session saving when an actual file was opened
     event = "BufReadPre",
     opts = function()
-      return require("custom.configs.persistence")
+      return require "custom.configs.persistence"
     end,
   },
   {
     "nvimdev/dashboard-nvim",
     event = "VimEnter",
     config = function()
-      require("custom.configs.dashboard")
+      require "custom.configs.dashboard"
     end,
     dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
@@ -129,14 +129,14 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
-      return require("custom.configs.nvim-treesitter")
+      return require "custom.configs.nvim-treesitter"
     end,
   },
   {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = function()
-      return require("custom.configs.noice")
+      return require "custom.configs.noice"
     end,
     dependencies = {
       "MunifTanjim/nui.nvim",
@@ -146,7 +146,7 @@ local plugins = {
   {
     "lewis6991/gitsigns.nvim",
     opts = function()
-      return require("custom.configs.gitsigns")
+      return require "custom.configs.gitsigns"
     end,
   },
   {
@@ -154,7 +154,7 @@ local plugins = {
     event = "VeryLazy",
     cmd = "Trouble",
     config = function()
-      require("custom.configs.trouble")
+      require "custom.configs.trouble"
     end,
     dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
@@ -168,6 +168,20 @@ local plugins = {
       "TmuxNavigateRight",
       "TmuxNavigatePrevious",
     },
+  },
+  {
+    "ahmedkhalf/project.nvim",
+    cmd = { "ProjectRoot" },
+    opts = {
+      manual_mode = false,
+      scope_chdir = "tab",
+      patterns = { "package.json", ".git" },
+    },
+    event = "VeryLazy",
+    config = function(_, opts)
+      require("project_nvim").setup(opts)
+      require("telescope").load_extension "projects"
+    end,
   },
 }
 return plugins

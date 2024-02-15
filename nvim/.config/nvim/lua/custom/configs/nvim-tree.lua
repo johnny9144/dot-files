@@ -7,11 +7,14 @@ local opts = {
 local config = function(opts)
   -- integrate with float window
   local function on_attach(bufnr)
-    local api = require("nvim-tree.api")
-    local FloatPreview = require("float-preview")
+    local api = require "nvim-tree.api"
+    local FloatPreview = require "float-preview"
     api.config.mappings.default_on_attach(bufnr)
 
     FloatPreview.attach_nvimtree(bufnr)
+
+    -- turn off preview by default
+    FloatPreview.toggle()
   end
 
   opts.on_attach = on_attach
