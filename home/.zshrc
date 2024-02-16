@@ -171,3 +171,6 @@ export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmux/layouts"
 export EDITOR="nvim"
 eval "$(tmuxifier init -)"
 alias tmw="tmuxifier w"
+
+
+alias awslogin=". ~/aws-login.sh"

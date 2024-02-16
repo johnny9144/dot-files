@@ -7,6 +7,7 @@ local options = {
     "markdown",
     "markdown_inline",
     "regex",
+    "terraform",
   },
 
   highlight = {
