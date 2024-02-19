@@ -23,13 +23,11 @@ local doom = {
     packages = { enable = true },
   },
   preview = {
-    -- command = "lolcat | lolcat",
-    command = "cmatrix -ba -C cyan",
+    command = "lolcat | lolcat",
     -- https://patorjk.com/software/taag/#p=testall&h=3&v=0&f=Big&t=Viewsonic
-    file_path = "",
-    -- file_path = home .. "/.config/nvim/lua/custom/logo/Star-Wars.txt",
-    file_height = 25,
-    file_width = 200,
+    file_path = home .. "/.config/nvim/lua/custom/logo/Star-Wars.txt",
+    file_height = 12,
+    file_width = 100,
   },
 }
 
