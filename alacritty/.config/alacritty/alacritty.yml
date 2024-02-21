@@ -100,12 +100,11 @@ window:
   # Background opacity
   opacity: 0.8
 
-  # Window title (ative with dynamic_title = false) 
+  # Window title (ative with dynamic_title = false)
   title: Rocks or Sucks
 
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: false
-
 
 scrolling:
   # maximum number of lines in the scrollback buffer. Specifying '0' will
@@ -147,10 +146,10 @@ key_bindings:
   - { key: Q, mods: Command, chars: "\x02d" } # close the window
 
   # ----- navigate panes -----
-  - { key: Left, mods: Command, chars: "\x02h" }
-  - { key: Down, mods: Command, chars: "\x02j" }
-  - { key: Up, mods: Command, chars: "\x02k" }
-  - { key: Right, mods: Command, chars: "\x02l" }
+  # - { key: Left, mods: Command, chars: "\x02h" }
+  # - { key: Down, mods: Command, chars: "\x02j" }
+  # - { key: Up, mods: Command, chars: "\x02k" }
+  # - { key: Right, mods: Command, chars: "\x02l" }
 
   # ----- resize panes -----
   - { key: Left, mods: Command|Option, chars: "\x02H" }
