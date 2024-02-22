@@ -191,5 +191,9 @@ local plugins = {
       require("nvim-surround").setup {}
     end,
   },
+  {
+    "nvim-pack/nvim-spectre",
+    event = "VeryLazy",
+  },
 }
 return plugins

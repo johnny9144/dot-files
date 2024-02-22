@@ -29,4 +29,10 @@ M.lspconfig = {
   },
 }
 
+M.replace = {
+  n = {
+    ["<leader>S"] = { '<cmd>lua require("spectre").toggle()<CR>', "Toggle Spectre to replace words" },
+  },
+}
+
 return M
