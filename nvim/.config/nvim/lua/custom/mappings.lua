@@ -3,8 +3,8 @@ local M = {}
 M.general = {
   n = {
     ["<leader>qq"] = { "<cmd> qa <CR>", "Quit nvim" },
-    ["<leader>w"] = { "<cmd>HopWordAC<cr>", "HopWord down" },
-    ["<leader>b"] = { "<cmd>HopWordBC<cr>", "HopWord up" },
+    ["<leader><leader>w"] = { "<cmd>HopWordAC<cr>", "HopWord down" },
+    ["<leader><leader>b"] = { "<cmd>HopWordBC<cr>", "HopWord up" },
 
     ["<leader>qs"] = {
       '<cmd>lua require("persistence").load()<cr>',
