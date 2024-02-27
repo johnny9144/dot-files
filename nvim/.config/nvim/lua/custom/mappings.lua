@@ -3,8 +3,8 @@ local M = {}
 M.general = {
   n = {
     ["<leader>qq"] = { "<cmd> qa <CR>", "Quit nvim" },
-    ["<leader><leader>w"] = { "<cmd>HopWordAC<cr>", "HopWord down" },
-    ["<leader><leader>b"] = { "<cmd>HopWordBC<cr>", "HopWord up" },
+    ["<leader>w"] = { "<cmd>HopWordAC<cr>", "HopWord down" },
+    ["<leader>b"] = { "<cmd>HopWordBC<cr>", "HopWord up" },
 
     ["<leader>qs"] = {
       '<cmd>lua require("persistence").load()<cr>',
@@ -20,6 +20,7 @@ M.general = {
     ["<c-l>"] = { "<cmd>TmuxNavigateRight<cr>" },
     ["<c-\\>"] = { "<cmd>TmuxNavigatePrevious<cr>" },
     ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Projects" },
+    ["<leader>X"] = { "<cmd>%bd|e#<cr>", desc = "Close all buffers but current one" },
   },
 }
 
