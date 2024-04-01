@@ -2,7 +2,7 @@ local M = {}
 
 M.general = {
   n = {
-    ["<leader>qq"] = { "<cmd> qa <CR>", "Quit nvim" },
+    ["<leader>qq"] = { "<cmd>qa<cr>", "Quit nvim" },
     ["<leader><leader>w"] = { "<cmd>HopWordAC<cr>", "HopWord down" },
     ["<leader><leader>b"] = { "<cmd>HopWordBC<cr>", "HopWord up" },
 

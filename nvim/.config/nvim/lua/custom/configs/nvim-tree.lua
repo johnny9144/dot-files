@@ -1,7 +1,7 @@
 local opts = {
   filters = {
     dotfiles = true,
-    git_ignored = false,
+    -- git_ignored = false,
   },
 }
 
