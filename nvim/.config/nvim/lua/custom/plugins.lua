@@ -10,6 +10,7 @@ local plugins = {
         "typescript-language-server",
         "lua-language-server",
         "graphql-language-service-cli",
+        "biome",
       },
     },
   },

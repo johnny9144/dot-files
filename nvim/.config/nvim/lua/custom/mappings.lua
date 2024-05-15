@@ -26,7 +26,7 @@ M.general = {
 
 M.lspconfig = {
   n = {
-    ["<leader>t"] = { "<cmd>TroubleToggle<CR>", "Open Diagnostics Panel" },
+    ["<leader>t"] = { "<cmd>TroubleToggle<CR>", "Toggle the Diagnostics Panel" },
   },
 }
 
