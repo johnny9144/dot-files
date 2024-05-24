@@ -171,6 +171,10 @@ key_bindings:
   # Clear History
   - { key: K, mods: Command, chars: "\x02\x0c" }
 
+  # cursor move
+  - { key: Right, mods: Option, chars: "\u001BF" }
+  - { key: Left, mods: Option, chars: "\u001BB" }
+
 mouse:
   # Click settings
   #
