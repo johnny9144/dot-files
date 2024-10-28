@@ -40,6 +40,7 @@ local plugins = {
   },
   {
     "zbirenbaum/copilot.lua",
+    enable = false,
     -- Lazy load when event occurs. Events are triggered
     -- as mentioned in:
     -- https://vi.stackexchange.com/a/4495/20389
@@ -63,6 +64,7 @@ local plugins = {
     dependencies = {
       {
         "zbirenbaum/copilot-cmp",
+        enable = false,
         config = function()
           require("copilot_cmp").setup()
         end,

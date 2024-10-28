@@ -8,6 +8,8 @@ local options = {
     "markdown_inline",
     "regex",
     "terraform",
+    "hcl",
+    "typescript",
   },
 
   highlight = {

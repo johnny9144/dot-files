@@ -3,9 +3,12 @@ local on_attach = config.on_attach
 local capabilities = config.capabilities
 local lspconfig = require "lspconfig"
 
-local servers = { "tsserver", "graphql", "biome" }
+local servers = {
+  "tsserver",
+  "graphql",
+}
 
--- require("lspconfig").biome.setup {}
+require("lspconfig").biome.setup {}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {

@@ -174,3 +174,6 @@ alias tmw="tmuxifier w"
 
 
 alias awslogin=". ~/aws-login.sh"
+
+# or for all proceeding commands
+export ORBENV=EDITOR:AWS_ACCESS_KEY_ID:AWS_SECRET_ACCESS_KEY
