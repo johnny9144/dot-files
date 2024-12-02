@@ -164,16 +164,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-# tmuxifier
-export TMUXIFIER="$HOME/.config/tmux/plugins/tmuxifier"
-export PATH="$TMUXIFIER/bin:$PATH"
-export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmux/layouts"
-export EDITOR="nvim"
-eval "$(tmuxifier init -)"
-alias tmw="tmuxifier w"
-
-
 alias awslogin=". ~/aws-login.sh"
 
 # or for all proceeding commands
 export ORBENV=EDITOR:AWS_ACCESS_KEY_ID:AWS_SECRET_ACCESS_KEY
+
+export PATH=/opt/homebrew/bin:$PATH
