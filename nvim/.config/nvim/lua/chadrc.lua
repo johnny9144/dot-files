@@ -1,9 +1,11 @@
+-- This file needs to have same structure as nvconfig.lua
+-- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
+-- Please read that file to know all available options :(
+
 ---@type ChadrcConfig
 local M = {}
 
 M.ui = {
-  theme_toggle = { "catppuccin", "tokyonight" },
-  theme = "catppuccin",
   tabufline = {
     lazyload = false,
   },
@@ -24,12 +26,21 @@ M.ui = {
     -- end
   },
   telescope = { style = "bordered" }, -- borderless / bordered
-  extended_integrations = { "trouble" },
 }
 
-M.plugins = "custom.plugins"
+M.base46 = {
+  theme_toggle = { "catppuccin", "tokyonight" },
+  theme = "catppuccin",
+}
 
--- check core.mappings for table structure
-M.mappings = require("custom.mappings")
+M.mason = {
+  pkgs = {
+    "typescript-language-server",
+    "lua-language-server",
+    "prettierd",
+    "stylua",
+    "biome",
+  },
+}
 
 return M

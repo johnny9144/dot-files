@@ -25,7 +25,7 @@ local doom = {
   preview = {
     command = "lolcat | lolcat",
     -- https://patorjk.com/software/taag/#p=testall&h=3&v=0&f=Big&t=Viewsonic
-    file_path = home .. "/.config/nvim/lua/custom/logo/Star-Wars.txt",
+    file_path = home .. "/.config/nvim/lua/logo/Star-Wars.txt",
     file_height = 12,
     file_width = 100,
   },
