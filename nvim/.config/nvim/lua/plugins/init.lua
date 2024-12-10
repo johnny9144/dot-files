@@ -17,14 +17,6 @@ return {
     end,
   },
   {
-    "nvimdev/dashboard-nvim",
-    event = "VimEnter",
-    config = function()
-      require "configs.dashboard"
-    end,
-    dependencies = { { "nvim-tree/nvim-web-devicons" } },
-  },
-  {
     "jose-elias-alvarez/null-ls.nvim",
     event = "VeryLazy",
     opts = function()
@@ -42,12 +34,25 @@ return {
     end,
   },
   {
-    "folke/persistence.nvim",
-    -- this will only start session saving when an actual file was opened
-    event = "BufReadPre",
-    opts = function()
-      return require "configs.persistence"
+    "rmagatti/auto-session",
+    lazy = false,
+    dependencies = {
+      "nvim-telescope/telescope.nvim", -- Only needed if you want to use sesssion lens
+    },
+    init = function()
+      vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
     end,
+    opts = {
+      auto_save_enabled = true,    -- Enables/disables auto saving
+      auto_restore_enabled = true, --Enables/disables auto restoring
+      auto_session_enabled = true, -- Enables/disables the plugin's auto save and restore features
+      session_lens = {
+        -- If load_on_setup is false, make sure you use `:SessionSearch` to open the picker as it will initialize everything first
+        load_on_setup = true,
+        theme_conf = { border = true },
+        previewer = true,
+      },
+    },
   },
   {
     "folke/todo-comments.nvim",
@@ -69,6 +74,15 @@ return {
     opts = function()
       return require "configs.nvim-treesitter"
     end,
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      filters = {
+        dotfiles = true,
+        -- git_ignored = false,
+      },
+    },
   },
   {
     "folke/noice.nvim",
