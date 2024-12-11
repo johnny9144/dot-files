@@ -33,6 +33,7 @@ M.mason = {
     "prettierd",
     "stylua",
     "biome",
+    "tflint",
   },
 }
 

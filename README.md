@@ -31,5 +31,5 @@ or `stow nvim`, `stow alacritty` as you need.
 
 ## Apps via Homebrew
 
-`brew install stow tmux neovim lolcat fzf ripgrep the_silver_searcher`
+`brew install stow tmux neovim lolcat fzf ripgrep the_silver_searcher terraform-lsp`
 `brew install --cask alacritty raycast orbstack font-jetbrains-mono-nerd-font`

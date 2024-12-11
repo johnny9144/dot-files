@@ -43,7 +43,7 @@ return {
       vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
     end,
     opts = {
-      auto_save_enabled = true,    -- Enables/disables auto saving
+      auto_save_enabled = true, -- Enables/disables auto saving
       auto_restore_enabled = true, --Enables/disables auto restoring
       auto_session_enabled = true, -- Enables/disables the plugin's auto save and restore features
       session_lens = {
@@ -79,7 +79,7 @@ return {
     "nvim-tree/nvim-tree.lua",
     opts = {
       filters = {
-        dotfiles = true,
+        -- dotfiles = true,
         -- git_ignored = false,
       },
     },
