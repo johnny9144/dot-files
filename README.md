@@ -31,5 +31,16 @@ or `stow nvim`, `stow alacritty` as you need.
 
 ## Apps via Homebrew
 
-`brew install stow tmux neovim lolcat fzf ripgrep the_silver_searcher terraform-lsp`
+`brew install stow tmux neovim lolcat fzf ripgrep the_silver_searcher terraform-lsp go terraform`
 `brew install --cask alacritty raycast orbstack font-jetbrains-mono-nerd-font`
+
+### Optional apps
+
+`brew install --cask android-platform-tools`
+`brew install scrcpy`
+
+## Rectangle
+
+Open Rectangle app settings and import settings from ~/RectangleConfig.json
+
+> Notice: some of the shortcut might be conflict with Alacritty if you don't import the configs.

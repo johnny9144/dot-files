@@ -6,6 +6,7 @@ local opts = {
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.prettierd,
     null_ls.builtins.formatting.terraform_fmt,
+    null_ls.builtins.formatting.hclfmt,
   },
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then

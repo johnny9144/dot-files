@@ -34,6 +34,7 @@ M.mason = {
     "stylua",
     "biome",
     "tflint",
+    "hclfmt",
   },
 }
 

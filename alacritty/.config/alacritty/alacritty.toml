@@ -42,22 +42,22 @@ mods = "Command"
 [[keyboard.bindings]]
 chars = "\u0002H"
 key = "Left"
-mods = "Command|Control"
+mods = "Command|Option"
 
 [[keyboard.bindings]]
 chars = "\u0002J"
 key = "Down"
-mods = "Command|Control"
+mods = "Command|Option"
 
 [[keyboard.bindings]]
 chars = "\u0002K"
 key = "Up"
-mods = "Command|Control"
+mods = "Command|Option"
 
 [[keyboard.bindings]]
 chars = "\u0002L"
 key = "Right"
-mods = "Command|Control"
+mods = "Command|Option"
 
 [[keyboard.bindings]]
 chars = "\u00021"
@@ -109,15 +109,15 @@ chars = "\u0002\f"
 key = "K"
 mods = "Command"
 
-# [[keyboard.bindings]]
-# chars = "\u001BF"
-# key = "Right"
-# mods = "Option"
-#
-# [[keyboard.bindings]]
-# chars = "\u001BB"
-# key = "Left"
-# mods = "Option"
+[[keyboard.bindings]]
+chars = "\u001BF"
+key = "Right"
+mods = "Option"
+
+[[keyboard.bindings]]
+chars = "\u001BB"
+key = "Left"
+mods = "Option"
 
 [general]
 live_config_reload = true
