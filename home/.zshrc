@@ -41,7 +41,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -77,8 +77,6 @@ plugins=(
   docker-compose
   zsh-autosuggestions
   fzf
-  z
-  yarn
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -164,9 +162,10 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-alias awslogin=". ~/aws-login.sh"
+# alias awslogin=". ~/aws-login.sh"
+eval "$(zoxide init zsh)"
 
 # or for all proceeding commands
-export ORBENV=EDITOR:AWS_ACCESS_KEY_ID:AWS_SECRET_ACCESS_KEY
+# export ORBENV=EDITOR:AWS_ACCESS_KEY_ID:AWS_SECRET_ACCESS_KEY
 
 export PATH=/opt/homebrew/bin:$PATH

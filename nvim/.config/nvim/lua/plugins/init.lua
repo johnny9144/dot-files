@@ -85,6 +85,18 @@ return {
     },
   },
   {
+    "rcarriga/nvim-notify",
+    event = "VeryLazy",
+    keys = {
+      {
+        "<esc>",
+        function()
+          require("notify").dismiss()
+        end,
+      },
+    },
+  },
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = function()
@@ -123,5 +135,27 @@ return {
         },
       }
     end,
+  },
+  {
+    "folke/trouble.nvim",
+    event = "VeryLazy",
+    cmd = "Trouble",
+    opts = {
+      modes = {
+        diagnostics = {
+          auto_close = true,
+          filter = { buf = 0 },
+          win = { type = "split", position = "bottom" },
+        },
+      },
+    },
+    keys = {
+      {
+        "<leader>t",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Toggle diagnostics panel (Trouble)",
+      },
+    },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 }
