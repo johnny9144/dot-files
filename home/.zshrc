@@ -109,8 +109,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 alias ls="eza"
-alias cat="bat"
+alias cat="batcat"
 alias cd="z"
+alias pbcopy='xclip -selection clipboard'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -171,4 +172,5 @@ eval "$(zoxide init zsh)"
 # or for all proceeding commands
 # export ORBENV=EDITOR:AWS_ACCESS_KEY_ID:AWS_SECRET_ACCESS_KEY
 
-export PATH=/opt/homebrew/bin:$PATH
+export TG_EXPERIMENT='stacks'
+export PATH=$PATH:/usr/local/go/bin:/opt/nvim-linux-x86_64/bin

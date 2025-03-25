@@ -5,7 +5,7 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.configs.lspconfig"
 
-lspconfig.terraform_lsp.setup {}
+lspconfig.terraform_ls.setup {}
 lspconfig.tflint.setup {}
 lspconfig.biome.setup {}
 lspconfig.ts_ls.setup {
